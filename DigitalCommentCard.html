@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Digital Comment Card</title>
+	<meta charset="utf-8" />
+    <script src="JavaScript.js"></script>
+</head>
+<body onload="setSliderValues()">
+    <form action=mailto:test@test.com?subject=Survey_Results " method="post" enctype="text/plain" >
+        <label for="parks">Choose a park:</label>
+
+        <select name="Park" id="park">
+            <option value="park1">Park 1</option>
+            <option value="park2">Park 2</option>
+            <option value="park3">Park 3</option>
+            <option value="park4">Park 4</option>
+        </select>
+
+        <br>
+
+        <h1>Please rank the following categories </h1>
+        <h3>(1 being the best and 5 being the worst, and 0 being No Comment)</h3>
+
+        <h1>Facilities</h1>
+       
+        <p>Suitability of park facilities for my recreational equipment and activities.  <span id="suit"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Suitability" id="Suitability" />
+        </div>
+
+        <p>Restroom cleanliness and availability of conveniences. <span id="rest"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Restroom Cleanliness" id="Restroom" />
+        </div>
+
+        <p>Appearance of park grounds. <span id="appear"></span></p> 
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Park Appearance" id="Park Appearance" />
+        </div>
+
+        <p>Adequacy of signs providing directions and information. <span id="sign"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Signage" id="Signage" />
+        </div>
+
+        <p>Parking space availability during this visit</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Parking" id="Parking" />
+        </div>
+
+        <p>Conditions of roads and parking areas in the park</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Road Conditions" id="Road Conditions" />
+        </div>
+
+        <br>
+
+        <h1>Employees</h1>
+
+        <br>
+
+        <p>Availability of park rangers and staff</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Staff Availability" id="Staff Availability" />
+        </div>
+
+        <p>Helpfulness of park rangers and staff</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Staff Helfulness" id="Staff Helpfulness" />
+        </div>
+
+        <br>
+
+        <h1>Environmental Setting</h1>
+
+        <br>
+
+        <p>Attractiveness of surrounding scenery and landscape</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Landscape" id="Landscape" />
+        </div>
+
+        <p>Quality of land and water resources for my activities</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Land Quality" id="Land Quality" />
+        </div>
+
+        <br>
+
+        <h1>Overall</h1>
+
+        <br>
+
+        <p>Waiting times needed to access park facilities and services</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Wait Time" id="Wait Time" />
+        </div>
+
+        <p>Feeling of safety and security in the park</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Safety" id="Safety" />
+        </div>
+
+        <p>Value received for any visitor fees paid</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Value" id="Value" />
+        </div>
+        
+        <p>Overall satisfaction with your visit to this area</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="1" class="slider" name="Overall" id="Overall" />
+        </div>
+
+        <br>
+
+        <label for="comments">What improvements would you like to see in this area? (Describe. Do not provide PII, or Personally Identifiable Information.)</label><br><br>
+        <textarea id="comments" name="Comments"></textarea><br>
+
+        <br>
+
+        <label for="date">Date of issue:</label>
+        <input type="date" id="date" name="Date" value="yyyy-mm-dd" min="2018-01-01" max="2030-01-01" /><br>
+       
+        <br>
+
+        <label for="img">Add an image:</label>
+        <input type="file" id="img" name="Image" accept="image/*" onchange="loadFile(event)" /><br>
+        <img id="output" width="400" /><br>
+
+        <script>
+            var loadFile = function(event) {
+                var Image = document.getElementById('output');
+                Image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+
+        <br>
+
+        <h3>Contact Information (Optional)</h3>
+        <label for="first">First Name:</label>
+        <input type="text" id="first" name="First Name" placeholder="First" />
+        <label for="last">Last Name:</label>
+        <input type="text" id="last" name="Last Name" placeholder="Last"/> <br>
+        <br>
+        <label for="phone">Phone #:</label>
+        <input type="text" id="phone" name="Phone #" placeholder="###-###-####"/>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="Email Address" placeholder="email@domain.com"/> <br>
+        <br>
+
+        <input type="submit" value="Submit Survey">
+
+    </form>
+</body>
+</html>
