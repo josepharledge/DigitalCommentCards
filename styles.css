@@ -1,21 +1,33 @@
-﻿body {
+body {
 }
+
+label {
+  font-size: 20px;
+}
+
 textarea {
-    width: 30%;
-    height: 100px;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  height: 300px;
 }
+
 select{
-    height: 25px;
-    width: 25%;
-    border: none;
-    background-color: #d3d3d3;
+  height: 25px;
+  width: 25%;
+  border: none;
+  background-color: #d3d3d3;
 }
+
 .slidecontainer {
-    width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .slider {
   -webkit-appearance: none;
-  width: 100%;
+  width: 900px;
   height: 25px;
   background: #d3d3d3;
   outline: none;
@@ -30,11 +42,21 @@ select{
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
+    width: 70px;
+    height: 70px;
+
+    border-radius: 70px;
+    background-image: url('tree.png'),
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, #fefefe),
+      color-stop(0.49, #dddddd),
+      color-stop(0.51, #d1d1d1),
+      color-stop(1, #a1a1a1)
+    );
+    background-size: 70px;
 }
 
 .slider::-moz-range-thumb {
@@ -42,4 +64,16 @@ select{
   height: 25px;
   background: #4CAF50;
   cursor: pointer;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#park {
+  width: 300px;
+  height: 30px;
+}
+#labels {
+  font-size: 20px;
 }

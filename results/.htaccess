@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Protected Site"
+AuthUserFile /home/joey/Documents/usaceauthentication/.htpasswd
+require valid-user
