@@ -1,6 +1,7 @@
 <h1>USACE Survey Results</h1>
 <?php
-
+/* This file is used to retrieve data from the MySQL database and present it
+to USACE in an easy-to-read manner. It needs some work. */
 $con=mysqli_connect("localhost","joey","58645431","usacedb");
 // Check connection
 if (mysqli_connect_errno())
@@ -10,7 +11,8 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 $result = mysqli_query($con,"SELECT * FROM responses");
 
-echo "<table border='1'>
+echo "
+<table border='1'>
 <tr>
 <th>Park Name</th>
 <th>Question 1</th>
@@ -34,7 +36,6 @@ echo "<table border='1'>
 <th>Last Name</th>
 <th>Phone Number</th>
 <th>Email Address</th>
-
 </tr>";
 
 while($row = mysqli_fetch_array($result))

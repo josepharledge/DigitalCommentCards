@@ -1,5 +1,5 @@
 <?php
-
+// This file is used to insert data into the database via post from index.html
      $park = $_POST['park'];
      $slider1 = $_POST['slider1'];
      $slider2 = $_POST['slider2'];

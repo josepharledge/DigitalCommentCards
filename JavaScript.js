@@ -1,4 +1,6 @@
-﻿function setSliderValues() {
+/* This file is mainly used to update values dynamically for the sliders in
+index.html */
+function setSliderValues() {
     //display the Suitability slider value and update as changed
     var slider1 = document.getElementById("slider1");
     var span1 = document.getElementById("span1");
